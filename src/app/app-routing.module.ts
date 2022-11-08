@@ -14,6 +14,8 @@ import { CryptoServiceModule } from './services/crypto.service-module';
 import { PublicHolidaysSelectComponentModule } from './components/public-holidays-select/public-holidays-select.component-module';
 import { PublicHolidaysServiceModule } from './services/public-holidays.service-module';
 import { CategoryCheckboxListComponentModule } from './components/category-checkbox-list/category-checkbox-list.component-module';
+import {CategoryMenuComponent} from "./components/category-menu/category-menu.component";
+import {CategoryMenuComponentModule} from "./components/category-menu/category-menu.component-module";
 
 @NgModule({
   imports: [
@@ -38,6 +40,10 @@ import { CategoryCheckboxListComponentModule } from './components/category-check
         path: 'checkbox-categories',
         component: CategoryCheckboxListComponent,
       },
+      {
+        path: 'categories-menu',
+        component: CategoryMenuComponent
+      }
     ]),
     ProductListComponentModule,
     ProductsServiceModule,
@@ -47,7 +53,8 @@ import { CategoryCheckboxListComponentModule } from './components/category-check
     CryptoServiceModule,
     PublicHolidaysSelectComponentModule,
     PublicHolidaysServiceModule,
-    CategoryCheckboxListComponentModule
+    CategoryCheckboxListComponentModule,
+    CategoryMenuComponentModule
   ],
   exports: [RouterModule],
 })
