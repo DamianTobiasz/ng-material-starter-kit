@@ -5,6 +5,8 @@ import { CategoryListComponent } from './components/category-list/category-list.
 import { CryptoChipsListComponent } from './components/crypto-chips-list/crypto-chips-list.component';
 import { PublicHolidaysSelectComponent } from './components/public-holidays-select/public-holidays-select.component';
 import { CategoryCheckboxListComponent } from './components/category-checkbox-list/category-checkbox-list.component';
+import { CategoryMenuComponent } from './components/category-menu/category-menu.component';
+import { ProductsTableComponent } from './components/products-table/products-table.component';
 import { ProductListComponentModule } from './components/product-list/product-list.component-module';
 import { ProductsServiceModule } from './services/products.service-module';
 import { CategoryListComponentModule } from './components/category-list/category-list.component-module';
@@ -14,36 +16,19 @@ import { CryptoServiceModule } from './services/crypto.service-module';
 import { PublicHolidaysSelectComponentModule } from './components/public-holidays-select/public-holidays-select.component-module';
 import { PublicHolidaysServiceModule } from './services/public-holidays.service-module';
 import { CategoryCheckboxListComponentModule } from './components/category-checkbox-list/category-checkbox-list.component-module';
-import {CategoryMenuComponent} from "./components/category-menu/category-menu.component";
-import {CategoryMenuComponentModule} from "./components/category-menu/category-menu.component-module";
+import { CategoryMenuComponentModule } from './components/category-menu/category-menu.component-module';
+import { ProductsTableComponentModule } from './components/products-table/products-table.component-module';
 
 @NgModule({
   imports: [
     RouterModule.forRoot([
-      {
-        path: 'products',
-        component: ProductListComponent,
-      },
-      {
-        path: 'categories',
-        component: CategoryListComponent,
-      },
-      {
-        path: 'crypto',
-        component: CryptoChipsListComponent,
-      },
-      {
-        path: 'public-holidays',
-        component: PublicHolidaysSelectComponent,
-      },
-      {
-        path: 'checkbox-categories',
-        component: CategoryCheckboxListComponent,
-      },
-      {
-        path: 'categories-menu',
-        component: CategoryMenuComponent
-      }
+      { path: 'products', component: ProductListComponent },
+      { path: 'categories', component: CategoryListComponent },
+      { path: 'crypto', component: CryptoChipsListComponent },
+      { path: 'public-holidays', component: PublicHolidaysSelectComponent },
+      { path: 'checkbox-categories', component: CategoryCheckboxListComponent },
+      { path: 'categories-menu', component: CategoryMenuComponent },
+      { path: 'product-search', component: ProductsTableComponent },
     ]),
     ProductListComponentModule,
     ProductsServiceModule,
@@ -54,7 +39,8 @@ import {CategoryMenuComponentModule} from "./components/category-menu/category-m
     PublicHolidaysSelectComponentModule,
     PublicHolidaysServiceModule,
     CategoryCheckboxListComponentModule,
-    CategoryMenuComponentModule
+    CategoryMenuComponentModule,
+    ProductsTableComponentModule,
   ],
   exports: [RouterModule],
 })
